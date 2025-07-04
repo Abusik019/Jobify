@@ -8,16 +8,13 @@ import { GradientText } from "../../components/GradientText/index";
 
 import hidePasswordImg from "../../assets/icons/hidePassword.svg";
 import showPasswordImg from "../../assets/icons/showPassword.svg";
-import hidePasswordImgRed from "../../assets/icons/redHidePassword.svg";
-import showPasswordImgRed from "../../assets/icons/redShowPassword.svg";
 import vkImg from "../../assets/icons/vk.svg";
 import jobifyImg from "../../assets/icons/logoJobify.svg";
 import phoneImg from "../../assets/icons/phone2.svg";
 
 function Login() {
-    const [hidePassword, setHidePassword] = useState(false);
+    const [hidePassword, setHidePassword] = useState(true);
     const [emailVaildate, setEmailVaildate] = useState(true);
-    const [passwordVaildate, setPasswordVaildate] = useState(true);
 
     const { accessToken, loading, error } = useSelector((state) => state.auth);
     const [email, setEmail] = useState("");
@@ -26,9 +23,8 @@ function Login() {
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
-    const isDisabled = !(email && password && emailVaildate && passwordVaildate);
+    const isDisabled = !(email && password && emailVaildate);
 
-    // Проверяем авторизацию при загрузке
     useEffect(() => {
         if (accessToken) {
             dispatch(checkAuth())
@@ -45,12 +41,6 @@ function Login() {
             .unwrap()
             .then(() => navigate("/"))
             .catch((err) => console.error("Login error:", err));
-    }
-
-    function handleValidatePassword(e) {
-        setPassword(e.target.value);
-        const value = /^(?=.*[A-ZА-Я])(?=.*[a-zа-я])(?=.*\d)(?=.*[\W_]).{8,}$/.test(e.target.value);
-        setPasswordVaildate(value);
     }
 
     console.log(error);
@@ -88,22 +78,19 @@ function Login() {
                     </div>
                     <div className={styles.passwordWrapper}>
                         <label
-                            style={{
-                                color: passwordVaildate ? "#000" : "#F63939",
-                            }}
                             htmlFor="password"
                         >
-                            {passwordVaildate ? "Пароль" : "Пароль должен содержать минимум 8 символов"}
+                            Пароль
                         </label>
                         <input
                             value={password}
                             type={hidePassword ? "password" : "text"}
                             id="password"
                             placeholder="Ваш пароль"
-                            onChange={(e) => handleValidatePassword(e)}
+                            onChange={(e) => setPassword(e.target.value)}
                             style={{
-                                borderColor: passwordVaildate ? "#808080" : "#F63939",
-                                color: passwordVaildate ? "#000" : "#F63939",
+                                borderColor: "#808080",
+                                color: "#000",
                             }}
                             required
                         />
@@ -115,15 +102,7 @@ function Login() {
                             }}
                         >
                             <img
-                                src={
-                                    hidePassword
-                                        ? passwordVaildate
-                                            ? showPasswordImg
-                                            : showPasswordImgRed
-                                        : passwordVaildate
-                                        ? hidePasswordImg
-                                        : hidePasswordImgRed
-                                }
+                                src={hidePassword ? hidePasswordImg : showPasswordImg}
                                 width={24}
                                 height={24}
                                 alt="Toggle password visibility"
