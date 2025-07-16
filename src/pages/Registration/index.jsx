@@ -4,7 +4,7 @@ import SelectionRole from "./SelectionRole";
 import SuccesRegistration from "./SuccessRegistration";
 
 export default function Registration() {
-    const [page, setPage] = useState(2);
+    const [page, setPage] = useState(1);
 
     function RenderPage(){
         switch(page){
