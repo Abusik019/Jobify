@@ -1,0 +1,282 @@
+.createProfile {
+    width: 100%;
+    min-width: 100vh;
+    height: fit-content;
+    min-height: 100vh;
+
+    padding: 37px 120px 60px 120px;
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 100px;
+}
+
+.createProfileContainer {
+    width: 100%;
+    height: fit-content;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    >h2 {
+        font-size: 42px;
+        font-weight: 400;
+        line-height: 42px;
+        letter-spacing: -0.03em;
+        text-align: left;
+
+        max-width: 60%;
+    }
+
+    >h3 {
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 20px;
+        text-align: left;
+
+        margin-top: 20px;
+        opacity: 0.6;
+
+        max-width: 60%;
+    }
+
+    .addExperience {
+        width: 424px;
+        height: 50px;
+
+        border-radius: 10px;
+        border: 1px solid #000;
+
+        margin-top: 50px;
+
+        background-color: transparent;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+
+        >span {
+            color: #000;
+
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 20px;
+            text-align: center;
+        }
+    }
+}
+
+.modalContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    width: 100%;
+
+    >h2 {
+        font-size: 28px;
+        font-weight: 400;
+        line-height: 31px;
+        text-align: left;
+
+        margin-bottom: 28px;
+    }
+
+    >form {
+        width: 100%;
+
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 28px;
+
+        >div {
+            width: 100%;
+        }
+
+        .formImage {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+
+            align-self: center;
+
+            >label {
+                display: inline-block;
+
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 16px;
+                letter-spacing: 0%;
+                text-align: center;
+
+                opacity: 0.5;
+
+                cursor: pointer;
+
+                >input {
+                    display: none;
+                }
+            }
+        }
+
+        .formNumber{
+            >input{
+                width: 100%;
+            }
+        }
+
+        .formLocation {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+
+            >div {
+                width: 50%;
+
+                >input {
+                    width: 100%;
+                }
+            }
+        }
+
+        .formDatePicker{
+            >h2{
+                font-weight: 400;
+                font-size: 18px;
+                line-height: 20px;
+                letter-spacing: 0%;
+
+                margin-bottom: 8px;
+            }
+        }
+
+        .formBtns {
+            width: 100%;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            >button {
+                padding: 10px 30px;
+                box-sizing: border-box;
+
+                font-size: 16px;
+                font-weight: 400;
+                line-height: 16px;
+                text-align: center;
+
+                border-radius: 10px;
+                border: 1px solid #000;
+            }
+
+            >:first-child {
+                background-color: #fff;
+                color: #000;
+            }
+
+            >:last-child {
+                background-color: #000000;
+                color: #fff;
+            }
+        }
+    }
+}
+
+
+.aboutMeBlock {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    width: 422px;
+    height: fit-content;
+
+    margin-top: 50px;
+
+    position: relative;
+
+    >img{
+        border-radius: 8px;
+    }
+
+    .aboutMeContent {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+        >div {
+            width: 100%;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            >h2 {
+                font-size: 22px;
+                font-weight: 500;
+                line-height: 26.4px;
+                text-align: left;
+            }
+
+            >div {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+
+                position: absolute;
+                right: 0;
+                top: 0;
+
+                >button {
+                    background-color: transparent;
+                }
+            }
+        }
+
+        >h3 {
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 20px;
+            text-align: left;
+
+            opacity: 0.6;
+
+            margin-top: 5px;
+        }
+
+        >h4 {
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 20px;            
+
+            margin-top: 13px;
+
+            opacity: 0.7;
+        }
+    }
+}
+
+.addExperienceSmall {
+    padding: 13px;
+    box-sizing: border-box;
+
+    border-radius: 10px;
+    border: 1px solid #000;
+
+    background-color: transparent;
+
+    width: 50px;
+    height: 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

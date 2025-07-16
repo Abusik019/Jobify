@@ -1,0 +1,151 @@
+.numberConfirm{
+    width: 100%;
+    height: 100vh;
+
+    overflow: hidden;
+
+    padding: 37px 120px 60px 120px;
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    >img{
+        align-self: flex-start;
+    }
+}
+
+.numberConfirmContent{
+    align-self: center;
+
+    width: 568px;
+    height: fit-content;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    >h2{
+        font-size: 40px;
+        font-weight: 400;
+        line-height: 42px;
+        text-align: center;
+
+        width: 100%;
+    }
+    
+    >p{
+        margin-top: 25px;
+
+        opacity: 0.6;
+
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 20px;
+        text-align: center;
+    }
+
+    >form{
+        margin: 0 auto;
+        margin-top: 65px;
+
+        width: fit-content;
+        height: 68px;
+
+        display: flex;
+        align-items: center;
+        gap: 15px;
+
+        >input{
+            width: 68px;
+            height: 100%;
+
+            border-radius: 10px;
+
+            background-color: transparent;
+            border: 1px solid #7c7c7c;
+            color: #000;
+
+            font-size: 32px;
+            font-weight: 400;
+            line-height: 45px;
+            text-align: center; 
+        }
+
+        input:focus {
+            border-color: #000;
+        }
+
+        >input[type="number"] {
+            -moz-appearance: textfield; 
+            -webkit-appearance: none;
+            appearance: none;
+        }
+        
+        >input[type="number"]::-webkit-inner-spin-button, 
+        input[type="number"]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+    }
+
+    >h3{
+        margin-top: 15px;
+
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 20px;
+        text-align: center;
+
+        color: #F63939;
+
+        opacity: 1;
+    }
+}
+
+.numberConfirmBtns{
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    >button{
+        padding: 10px 30px;
+        box-sizing: border-box;
+
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 16px;
+        text-align: center;
+
+        border-radius: 10px;
+
+        border: 1px solid #000;
+    }
+
+    >:first-child{
+        background-color: #fff;
+        color: #000;
+    }
+
+    >:last-child{
+        background-color: #000;
+        color: #fff;
+    }
+}
+
+.sendAgain{
+    background-color: transparent;
+
+    margin-top: 65px;
+
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 20px;
+    text-align: center;
+
+    color: #4A7358;
+}

@@ -1,0 +1,333 @@
+.loginWrapper{
+    width: 100%;
+    min-height: 100vh;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+
+    padding: 40px 120px 0 120px;
+    box-sizing: border-box;
+
+    background-color: #f7f7f7;
+
+    >a{
+        align-self: flex-start;
+    }
+}
+
+.registration{
+    width: 514px;
+    height: fit-content;
+
+    border-radius: 16px;
+
+    background-color: #fff;
+    border: 1px solid #eaeaea;
+
+    padding: 40px;
+    box-sizing: border-box;
+}
+
+.registration h1{
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+
+    text-align: center;
+}
+
+
+.regForm{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    margin-top: 30px;
+}
+
+.forgotPassword{
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 16px;
+
+    opacity: 0.7;
+
+    align-self: flex-end;
+
+    margin-top: 10px;
+
+    background-color: transparent;
+    color: #000;
+}
+
+.regForm label{
+    text-wrap: nowrap;
+    
+    margin-bottom: 5px;
+
+    font-size: 14px;
+}
+
+.formNameData{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+
+    margin-top: 20px;
+
+    width: 100%;
+}
+
+.formNameData > div{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    width: 50%;
+}
+
+.registration{
+    input[type="text"], input[type="password"]{
+        width: 100%;
+        height: 46px;
+    
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+    
+        padding: 0 12px;
+        box-sizing: border-box;
+    
+        background-color: transparent;
+    
+        border-radius: 10px;
+        border: 1px solid #808080;
+    
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    
+        color: #000;
+    
+        opacity: 1;
+    
+        transition: opacity .3s ease-in-out;
+    }
+    
+    input::placeholder{
+        color: #808080;
+    }
+}
+
+.emailWrapper, .passwordWrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    width: 100%;
+
+    position: relative;
+
+    margin-top: 10px;
+
+    >input{
+        padding: 0 15px !important;
+        box-sizing: border-box;
+    }
+}
+
+.nextBtn{
+    width: 100%;
+    height: 50px;
+
+    background-color: #000;
+    color: #FFFFFF;
+
+    border-radius: 10px;
+
+    margin-top: 40px;
+
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+
+    transition: background-color .3s ease-in-out;
+    opacity: 1;
+}
+
+.nextBtn:disabled{
+    pointer-events: none;
+    opacity: .2;
+}
+
+.nextBtn:hover{
+    background-color: #333333;
+}
+
+.regForm > label{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+    text-align: left;
+
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 16px;
+}
+
+.registration{
+    input[type="checkbox"]{
+        -webkit-appearance: none; 
+        -moz-appearance: none; 
+        appearance: none; 
+    
+        width: 20px;
+        height: 20px;
+    
+        background-color: transparent;
+    
+        border-radius: 3px;
+        border: 1px solid #808080;
+        
+        cursor: pointer;
+    
+        margin-left: 5px;
+    }
+    
+    input[type="checkbox"]:checked {
+        background-color: #000; 
+        border: 1px solid #000; 
+    }
+}
+
+
+.passwordVisible{
+    position: absolute;
+    bottom: 13px;
+    right: 15px;
+
+    background-color: transparent;
+
+    padding: 0;
+
+    height: 20px;
+    width: 20px;
+}
+
+.passwordVisible img{
+    opacity: .6;
+}
+
+.anotherRegistrations{
+    margin-top: 40px;
+
+    height: fit-content;
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+
+.anotherRegistrations > button{
+    width: 100%;
+    height: 46px;
+
+    border-radius: 12px;
+    border: 1px solid #00000033;
+
+    background-color: transparent;
+    color: #000;
+
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    opacity: .8;
+    transition: opacity .3s ease-in-out;
+}
+
+.anotherRegistrations > button:hover{
+    opacity: 1;
+}
+
+.haveAccount{
+    margin-top: 30px;
+
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+
+    >h2{
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 16px;
+        text-align: center;
+
+        opacity: .9;
+    }
+}
+
+.haveAccount > a{
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+
+    text-decoration: none;
+
+    color: #000;
+
+    transition: opacity .3s ease-in-out;
+}
+
+.haveAccount > a{
+    opacity: 0.8;
+}
+
+.haveAccount > a{
+    opacity: 1;
+}
+
+.passwordForget{
+    width: 390px;
+    display: flex;
+    justify-content: end;
+    opacity: 70%;
+    cursor: pointer;
+}
+
+.errorMessage{
+    width: 100%;
+
+    border: 1px solid #f70c0c;
+    color: #f70c0c;
+
+    padding: 8px 0;
+    box-sizing: border-box;
+
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 16px;
+    text-align: center;
+
+    border-radius: 8px;
+}
+

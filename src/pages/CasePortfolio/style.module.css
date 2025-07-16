@@ -1,0 +1,92 @@
+.rod{
+    width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    margin-top: 71px;
+
+}
+.close{
+    position: absolute;
+    left: 1400px;
+    top: 10px;
+    width: 42px;
+    height: 42px;
+    cursor: pointer;
+    
+}
+.footer{
+    margin: auto;
+    width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 100px;
+    margin-bottom: 30px;
+    align-items: center;
+}
+.left{
+    width: 470px;
+}
+.left h1{
+    font-size: 42px;
+    margin-bottom: 20px;
+}
+.lorem{
+    font-size: 18px;
+    margin-bottom: 94px;
+    color: gray;
+}
+.talants{
+    margin-bottom: 50px;
+}
+.talants p{
+    font-size: 18px;
+    color: gray;
+    margin-bottom: 20px;
+}
+.buttons{
+    display: flex;
+    gap: 10px;
+}
+.buttons button{
+    width: 80px;
+    height: 36px;
+    border-radius: 8px;
+    background-color: #EAEAEA;
+    color: #00000099;
+}
+.date p{
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: gray;
+}
+.date a{
+    color: #4A7358;
+    font-size: 18px;
+}
+.right{
+    width: 660px;
+
+}
+.images{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+.mocKli{
+    width: 660px;
+    height: 456px;
+}
+.footer button{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    width: 360px;
+    height: 54px;
+    border-radius: 16px;
+    font-size: 16px;
+    justify-content: center;
+    background-color: transparent;
+    border: 1px solid gray;
+    color: #000;
+}

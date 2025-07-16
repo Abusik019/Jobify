@@ -1,0 +1,186 @@
+.createConsultationWrapper{
+    width: 100%;
+    height: fit-content;
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 95px;
+
+    padding: 120px 120px 60px 120px;
+    box-sizing: border-box;
+}
+
+.createConsultation{
+    width: 100%;
+    height: fit-content;
+
+    .consultationTitleBlock{
+        width: 100%;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        >h1{
+            font-weight: 400;
+            font-size: 42px;
+            line-height: 42px;
+        }
+
+        >div{
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            >button{
+                border: 1px solid #000;
+                border-radius: 10px;
+
+                background-color: transparent;
+                color: #000;
+            }
+
+            >:first-child{
+                padding: 10px 30px;
+                box-sizing: border-box;
+
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 16px
+            }
+
+            >:last-child{
+                width: 36px;
+                height: 36px;
+
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+    }
+
+    .consultationContent{
+        margin-top: 20px;
+
+        width: 100%;
+        height: fit-content;
+
+        padding: 30px 25px;
+        box-sizing: border-box;
+
+        border: 1px solid #EAEAEA;
+        border-radius: 12px;
+
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 40px;
+
+        >div{
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 10px;
+
+            >h2{
+                font-weight: 500;
+                font-size: 22px;
+                line-height: 26px;
+
+                text-align: left;
+            }
+
+            >p{
+                font-weight: 400;
+                font-size: 18px;
+                line-height: 20px;
+                opacity: .7;
+
+                text-align: left;
+            }
+
+            >ul{
+                margin-top: 15px;
+        
+                display: flex;
+                align-items: center;
+                gap: 10px;
+        
+                >li{
+                    padding: 8px 24px;
+                    box-sizing: border-box;
+        
+                    background-color: #EAEAEA;
+                    color: #000;
+        
+                    border-radius: 8px;
+        
+                    font-weight: 400;
+                    font-size: 16px;
+                    line-height: 16px;
+        
+                    opacity: .7;
+                }
+            }
+
+            >div{
+                padding: 8px 14px;
+                box-sizing: border-box;
+
+                border: 1px solid #000;
+                border-radius: 12px;
+
+                background-color: transparent;
+                color: #000;
+
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 16px;
+            }
+        }
+    }
+}
+
+.buttonsContainer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 100%;
+
+    >button{
+        padding: 10px 30px;
+        box-sizing: border-box;
+
+        border-radius: 10px;
+
+        border: 1px solid #000;
+
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 16px;
+        text-align: center;
+    }
+
+    >:first-child{
+        background-color: transparent;
+        color: #000;
+    }
+
+    >:last-child{
+        background-color: #000;
+        color: #fff;
+    }
+
+    >h2{
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 20px;
+        text-align: center;
+
+        opacity: 0.5;
+    }
+}

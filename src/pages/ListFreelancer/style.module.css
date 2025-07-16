@@ -1,0 +1,292 @@
+.content{
+    width: 1200px;
+   margin: auto;
+}
+.content img{
+    position: relative;
+    top: 40px;
+    left: 25px;
+}
+.content input{
+    width: 1220px;
+    padding: 20px 50px 20px 60px;
+    border: 2px solid #00000099;
+}
+.content h1{
+    font-size: 42px;
+    font-weight: 400;
+}
+
+
+
+.main{
+    display: flex;
+}
+
+
+
+.sidebar{
+    width: 265px;
+    margin-top: 50px;
+    margin-left: 120px;
+    border: 1px solid #EAEAEA;
+    border-radius: 12px;
+    padding: 15px 0 0 15px;
+    box-sizing: border-box;
+    
+}
+.sidebar h2{
+font-size: 18px;
+margin-bottom: 15px;
+}
+
+.sidebar ul li{
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+.sidebar ul li ul li:nth-child(1){
+    margin-top: 20px;
+}
+
+
+.price{
+    width: 265px;
+    margin-top: 15px;
+    margin-left: 120px; 
+    border: 1px solid #EAEAEA;
+    border-radius: 12px;
+    padding: 15px 0 0 15px;
+    box-sizing: border-box;
+}
+.price h2{
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+.priceInputs{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+.priceInputs div{
+    display: flex;
+    flex-direction: column;
+    margin-right: 10px;
+
+}
+.priceInputs div label{
+    color: gray;
+}
+.priceInputs div input{
+    background-color: transparent;
+    width: 100px;
+    height: 22px;
+    padding: 5px;
+    margin-top: 5px;
+    border: none;
+    border-radius: 4px;
+}
+.line{
+    width: 100px;
+    border: 1px solid #000000;
+}
+.slider{
+    width: 255px;
+    height: 10px;
+    border-radius: 5px;
+    position: relative;
+   bottom: -48px;
+    left: -130px;
+    margin-bottom: 50px;
+
+}
+
+
+.track{
+    background: #ccc;
+    height: 4px;
+    border-radius: 5px;
+}
+.activeTrack {
+    background: black !important; /* Закрашиваем активную часть черным */
+  }
+.thumb{
+    height: 20px;
+    width: 20px;
+    background: black;
+    border-radius: 18px;
+    cursor: pointer;
+    position: absolute;
+    top: -8px;
+}
+
+.rating{
+    width: 265px;
+    margin-top: 15px;
+    margin-left: 120px;
+    border: 1px solid #EAEAEA;
+    border-radius: 12px;
+    padding: 15px 0 0 15px;
+    box-sizing: border-box;
+}
+.rating h2{
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.executor{
+    width: 265px;
+    margin-top: 15px;
+    margin-left: 120px;
+    border: 1px solid #EAEAEA;
+    border-radius: 12px;
+    padding: 15px 0 0 15px;
+    box-sizing: border-box;
+}
+.executor h2{
+    cursor: pointer;
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+.executors{
+    display: flex;
+    margin-bottom: 16px;
+    align-items: center;
+}
+.executors input{
+    width: 20px;
+    height: 20px;
+    margin-right: 16px;
+}
+.executors p{
+    font-size: 18px;
+}
+.words {
+    width: 265px;
+    margin-top: 35px;
+    margin-left: 120px;
+}
+.words h2{
+    cursor: pointer;
+    font-size: 18px;
+}
+.word input{
+    box-sizing: border-box;
+    height: 40px;
+    padding: 5px 50px 5px 50px;
+    border: 2px solid #00000099;
+}
+.word img{
+    position: relative;
+    top: 35px;
+    left: 15px;
+}
+.container{
+    width: 265px;
+    height: 272px;
+    overflow-y: scroll;
+    margin-top: 20px;
+    gap: 16px;
+    padding: 0 24px 0 0;
+}
+
+.slider1{
+    width: 240px;
+    height: 40px;
+    border-radius: 5px;
+    position: relative;
+   /* bottom: 28px; */
+   
+}
+
+
+
+div::-webkit-scrollbar{
+    width: 2px;
+}
+div::-webkit-scrollbar-thumb{
+    background-color: #888;
+}
+.item {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ margin-bottom: 10px;
+}
+.item input{
+    padding: 0;
+    width: 20px;
+    height: 20px;
+}
+.item span:nth-child(3){
+    color: gray;
+}
+.orders{
+    width: 265px;
+    /* height: 197px; */
+    margin-top: 15px;
+    margin-left: 120px;
+    border: 1px solid #EAEAEA;
+    border-radius: 12px;
+    padding: 15px 0 0 15px;
+    box-sizing: border-box;
+    
+}
+.orders h2{
+    cursor: pointer;
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+.order{
+    margin-top: 20px;
+}
+.order div{
+    margin-top: 10px;
+}
+.order p:nth-child(1){
+    color: gray;
+    font-size: 12px;
+}
+.order p:nth-child(2){
+    font-size: 16px;
+}
+.buttons{
+    width: 265px;
+    margin-top: 35px;
+    margin-left: 120px;
+    display: flex;
+    flex-direction: column;  
+    margin-bottom: 180px; 
+}
+.buttons button:nth-child(1){
+    width: 265px;
+    height: 46px;
+    border-radius: 10px;
+    background-color:#000000;
+    color: #FFFFFF;
+    padding: 15px 30px 15px 30px;
+}
+.buttons button:nth-child(2){
+    width: 265px;
+    height: 46px;
+    border-radius: 10px;
+    border: 1px solid black;
+    padding: 15px 30px 15px 30px;
+    background-color: transparent;
+    color: #000000;
+    margin-top: 10px;
+    
+}
+
+
+.right{
+    margin-top: 40px;
+    margin-left: 40px;
+}
+
+
+
+
+
+
+
+

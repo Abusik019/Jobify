@@ -1,0 +1,75 @@
+.createConsultationWrapper{
+    width: 100%;
+    height: fit-content;
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 271px;
+
+    padding: 245px 120px 60px 120px;
+    box-sizing: border-box;
+}
+
+.createConsultation{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    width: 100%;
+    height: fit-content;
+
+    >h2{
+        font-weight: 400;
+        font-size: 42px;
+        line-height: 42px;
+    }
+
+    >p{
+        margin-top: 15px;
+        opacity: .7;
+
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 20px;
+    }
+
+    >input{
+        width: 100%;
+        height: 54px;
+
+        padding: 16px 12px;
+        box-sizing: border-box;
+
+        margin-top: 40px;
+
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 22px;
+    }
+
+    >ul{
+        margin-top: 15px;
+
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        >li{
+            padding: 8px 24px;
+            box-sizing: border-box;
+
+            background-color: #EAEAEA;
+            color: #000;
+
+            border-radius: 8px;
+
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 16px;
+
+            opacity: .7;
+        }
+    }
+}

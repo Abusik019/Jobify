@@ -1,0 +1,27 @@
+.addImage{
+    width: 150px;
+    height: 100px;
+
+    border: 2px solid #D9D9D9;
+    border-radius: 16px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: transparent;
+
+    transition: background-color .3s ease-in-out;
+
+    >img{
+        opacity: .4;
+    }
+}
+
+.addImage:hover{
+    background-color: rgb(239, 239, 239);
+}
+
+.sc-KXCwU.bPKxIw{
+    width: 100% !important;
+}  

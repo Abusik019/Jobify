@@ -1,0 +1,141 @@
+.createTask{
+    width: 100%;
+    height: 100vh;
+
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 120px 120px 60px 120px;
+    box-sizing: border-box;
+}
+
+.createTaskContainer{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    width: 100%;
+}
+
+.titleBlock{
+    max-width: 478px;
+
+    >h2{
+        font-size: 42px;
+        font-weight: 400;
+        line-height: 42px;
+        letter-spacing: -0.03em;
+        text-align: left;
+    }
+
+    >p{
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 19.8px;
+        text-align: left;
+        opacity: 0.6;
+
+        margin-top: 20px;
+    }
+}
+
+.contentBlock{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    width: 45%;
+
+    >input{
+        opacity: 1;
+
+        width: 100%;
+
+        padding: 16px 16px 16px 46px;
+        box-sizing: border-box;
+
+        background-image: url('../../../assets/icons/search-2.svg');
+        background-repeat: no-repeat;
+        background-position: 3%;
+        background-size: auto;
+
+        border-radius: 10px;
+    }
+
+    >h2, >h3, >h4{
+        opacity: 0.7;
+
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 20px;
+        text-align: left;
+    }
+
+    >h2{
+        margin-top: 10px;
+    }
+
+    >h3{
+        margin-top: 20px;
+    }
+
+    >h4{
+        margin-top: 30px;
+    }
+}
+
+.choosenSkills, .popularSkills, .searchResultSkills{
+    margin-top: 20px;
+
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+
+    >li{
+        padding: 8px 24px;
+        box-sizing: border-box;
+
+        background-color: transparent;
+
+        border-radius: 8px;
+
+        display: flex;
+        align-items: center;
+        gap: 4px;
+
+        overflow: hidden;
+        position: relative;
+
+        >h2{
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 20px;
+        }
+
+        >button{
+            background-color: transparent;
+
+            width: 18px;
+            height: 18px;
+        }
+    }
+}
+
+.choosenSkills >li{
+    border: 1px solid #7F78E9;
+}
+
+.popularSkills > li, .searchResultSkills > li{
+    background-color: #EAEAEA;
+
+    border: none;
+
+    >h2{
+        opacity: 0.6;
+    }
+}
