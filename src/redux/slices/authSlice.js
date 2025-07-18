@@ -5,7 +5,7 @@ const API_URL = import.meta.env.VITE_API_URL;
 const initialState = {
     error: null,
     loading: false,
-    accessToken: localStorage.getItem("accessToken") || null, // Добавлено fallback значение
+    accessToken: localStorage.getItem("accessToken") || null, 
     refreshToken: localStorage.getItem("refreshToken") || null,
     userInfo: null
 };

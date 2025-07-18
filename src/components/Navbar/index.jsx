@@ -1,8 +1,9 @@
 import styles from "./style.module.css";
 import { useEffect, useRef, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
 import { TabsComponent } from "../TabsComponent";
+import { logout } from "../../redux/slices/authSlice";
 
 import whiteHeartImg from "../../assets/icons/whiteHeart.svg";
 import heartImg from "../../assets/icons/heart.svg";
@@ -17,8 +18,11 @@ import jobifyImg from "../../assets/icons/logoJobify.svg";
 import wallerImg from "../../assets/icons/wallet.svg";
 import supportImg from "../../assets/icons/support.svg";
 
+// eslint-disable-next-line react/prop-types
 export const Navbar = ({ theme }) => {
+    const dispatch = useDispatch();
     const navigate = useNavigate();
+    const location = useLocation();
     const token = useSelector((state) => state.auth.accessToken);
     const userInfo = useSelector((state) => state.auth.userInfo);
 
@@ -29,41 +33,43 @@ export const Navbar = ({ theme }) => {
         profile: false,
         search: false,
     });
-    const [isShowSearch, setIsShowSearch] = useState(false);
     const [isReadNot, setIsReadNot] = useState(false);
-    const [isLogin, setIsLogin] = useState(false);
+    const [isShowSearch, setIsShowSearch] = useState(false);
     const wrapperRef = useRef(null);
-    
-    // console.log(userInfo);
 
-    useEffect(() => {
-        if (token) {
-            setIsLogin(true);
-        } else {
-            setIsLogin(false);
-        }
-    }, [token]);
+    const isLogin = Boolean(token);
 
+    // Закрытие всех dropdown-меню при клике вне Navbar
     useEffect(() => {
         const handleClickOutside = (event) => {
             if (wrapperRef.current && !wrapperRef.current.contains(event.target)) {
-                setIsNavbarDropdown((prev) => ({
-                    ...prev,
+                setIsNavbarDropdown({
+                    order: false,
+                    work: false,
+                    notifications: false,
+                    profile: false,
                     search: false,
-                }));
+                });
                 setIsShowSearch(false);
             }
         };
-
-        document.addEventListener("click", handleClickOutside);
+        document.addEventListener("mousedown", handleClickOutside);
         return () => {
-            document.removeEventListener("click", handleClickOutside);
+            document.removeEventListener("mousedown", handleClickOutside);
         };
     }, []);
 
-    const toggleDropdown = () => {
-        setIsDropdownVisible((prev) => !prev);
-    };
+    // Закрытие всех dropdown-меню при переходе на другую страницу
+    useEffect(() => {
+        setIsNavbarDropdown({
+            order: false,
+            work: false,
+            notifications: false,
+            profile: false,
+            search: false,
+        });
+        setIsShowSearch(false);
+    }, [location.pathname]);
 
     const toggleNavDropdown = (item) => {
         setIsNavbarDropdown((prev) => {
@@ -76,13 +82,19 @@ export const Navbar = ({ theme }) => {
     };
 
     const removeToken = () => {
-        localStorage.removeItem("accessToken");
-        localStorage.removeItem("refreshToken");
+        dispatch(logout());
+        setIsNavbarDropdown({
+            order: false,
+            work: false,
+            notifications: false,
+            profile: false,
+            search: false,
+        });
         navigate("/login");
     };
 
     return (
-        <div className={`${styles.navbar} ${theme === 'light' ? styles.light : '' }`} style={{backgroundColor: theme === 'dark' ? '#000' : '#fff'}}>
+        <div className={`${styles.navbar} ${theme === 'light' ? styles.light : '' }`} style={{backgroundColor: theme === 'dark' ? '#000' : '#fff'}} ref={wrapperRef}>
             <div className={styles.leftSide}>
                 <Link to="/">
                     <img src={theme === 'dark' ? whiteJobifyImg : jobifyImg} width={102} height={42} alt="Jobify logo" />
@@ -125,7 +137,7 @@ export const Navbar = ({ theme }) => {
                         </div>
                     </li>
                     <li>
-                        <Link to="#">Наш курс</Link>
+                        <Link to="https://stepik.org/a/227990" target="_blank">Наш курс</Link>
                     </li>
                     {isLogin && (
                         <li>

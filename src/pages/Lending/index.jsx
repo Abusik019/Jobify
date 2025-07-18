@@ -103,7 +103,7 @@ export default function Lending() {
 
     useEffect(() => {
         dispatch(fetchSubCategoryId());
-    }, []);
+    }, [dispatch]);
 
     useEffect(() => {
         const observer = new IntersectionObserver(
@@ -480,7 +480,7 @@ export default function Lending() {
             >
                 <h2>Курс по искусственному интелекту</h2>
                 <p>Наш курс по искусственному интеллекту (ИИ) создан специально для фрилансеров, которые хотят зарабатывать больше и автоматизировать рутинные задачи.</p>
-                <button>Перейти к курсу</button>
+                <Link to="https://stepik.org/227990" target='_blank'>Перейти к курсу</Link>
                 <img className={styles.course1} src={course1Img} alt="course example" />
                 <img className={styles.course2} src={course2Img} alt="course example" />
                 <img className={styles.course3} src={course3Img} alt="course example" />
