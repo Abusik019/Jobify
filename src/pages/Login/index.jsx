@@ -4,10 +4,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { authSignIn, checkAuth } from "../../redux/slices/authSlice";
 import { Link, useNavigate } from "react-router-dom";
 import { GradientText } from "../../components/GradientText/index";
+import VkLoginButton from '../../components/VkLoginButton/index';
 
 import hidePasswordImg from "../../assets/icons/hidePassword.svg";
 import showPasswordImg from "../../assets/icons/showPassword.svg";
-import vkImg from "../../assets/icons/vk.svg";
 import jobifyImg from "../../assets/icons/logoJobify.svg";
 import phoneImg from "../../assets/icons/phone2.svg";
 
@@ -23,7 +23,6 @@ function Login() {
 
     const isDisabled = !(email && password);
 
-    // Проверяем авторизацию при загрузке
     useEffect(() => {
         if (accessToken) {
             dispatch(checkAuth())
@@ -97,10 +96,7 @@ function Login() {
                         <img src={phoneImg} width={26} height={26} alt="Phone" />
                         Войти с помощью номера
                     </button>
-                    <button>
-                        <img src={vkImg} width={24} height={24} alt="VK" />
-                        Войти через аккаунт Вконтакте
-                    </button>
+                    <VkLoginButton />
                 </div>
                 <div className={styles.haveAccount}>
                     <h2>Нет аккаунта?</h2>

@@ -10,8 +10,8 @@ import hidePasswordImg from "../../../assets/icons/hidePassword.svg";
 import showPasswordImg from "../../../assets/icons/showPassword.svg";
 import hidePasswordImgRed from "../../../assets/icons/redHidePassword.svg";
 import showPasswordImgRed from "../../../assets/icons/redShowPassword.svg";
-import vkImg from "../../../assets/icons/vk.svg";
 import jobifyImg from "../../../assets/icons/logoJobify.svg";
+import VkLoginButton from "../../../components/VkLoginButton";
 
 function MainReg() {
     const [hidePassword, setHidePassword] = useState(true);
@@ -28,7 +28,7 @@ function MainReg() {
 
     const dispatch = useDispatch();
     const navigate = useNavigate();
-    const { loading, error } = useSelector((state) => state.auth);
+    const { loading } = useSelector((state) => state.auth);
 
     const isDisabled = !(
         emailVaildate &&
@@ -248,10 +248,7 @@ function MainReg() {
                     </Link>
                 </div>
                 <div className={styles.anotherRegistrations}>
-                    <button>
-                        <img src={vkImg} width={24} height={24} alt="VK" />
-                        Войти через аккаунт Вконтакте
-                    </button>
+                    <VkLoginButton />
                 </div>
                 <div className={styles.haveAccount}>
                     <h2>Уже зарегистрированы?</h2>
