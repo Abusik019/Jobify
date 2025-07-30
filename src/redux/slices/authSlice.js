@@ -38,7 +38,7 @@ export const authSignUp = createAsyncThunk(
                 return thunkAPI.rejectWithValue(data.message || "Ошибка регистрации");
             }
 
-            return data; // Возвращаем { id, isFreelancer }
+            return data; 
         } catch (error) {
             return thunkAPI.rejectWithValue(error.message);
         }
@@ -151,7 +151,14 @@ export const logout = createAsyncThunk(
 export const authSlice = createSlice({
     name: "auth",
     initialState,
-    reducers: {},
+    reducers: {
+        setTokens: (state, action) => {
+            state.accessToken = action.payload.accessToken;
+            state.refreshToken = action.payload.refreshToken;
+            state.error = null;
+            state.loading = false;
+        }
+    },
     extraReducers(builder) {
         builder
             // Регистрация
@@ -231,5 +238,7 @@ export const authSlice = createSlice({
             });
     },
 });
+
+export const { setTokens } = authSlice.actions;
 
 export default authSlice.reducer;

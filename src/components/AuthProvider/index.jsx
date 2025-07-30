@@ -10,16 +10,22 @@ export const AuthProvider = ({ children }) => {
     const { accessToken, refreshToken, error } = useSelector((state) => state.auth);
 
     useEffect(() => {
-        // Проверяем авторизацию при загрузке
+        // Проверяем, есть ли код OAuth в URL
+        const params = new URLSearchParams(location.search);
+        const hasOAuthCode = params.get('code');
+        
         if (accessToken) {
             dispatch(checkAuth());
-        } else if (!accessToken && !refreshToken && location.pathname !== "/login" && location.pathname !== "/registration") {
+        } else if (!accessToken && !refreshToken && location.pathname !== "/login" && location.pathname !== "/registration" && !hasOAuthCode) {
             navigate("/login");
         }
-    }, [accessToken, refreshToken, dispatch, navigate, location.pathname]);
+        
+        if (accessToken && location.pathname === "/login" && !hasOAuthCode) {
+            navigate("/");
+        }
+    }, [accessToken, refreshToken, dispatch, navigate, location.pathname, location.search]);
 
     useEffect(() => {
-        // Периодически обновляем токен
         const interval = setInterval(() => {
             if (refreshToken) {
                 dispatch(refreshTokens())
@@ -37,7 +43,6 @@ export const AuthProvider = ({ children }) => {
         return () => clearInterval(interval);
     }, [refreshToken, dispatch, navigate]);
 
-    // Автоматический logout при ошибке refreshTokens
     useEffect(() => {
         if (error === "Не удалось обновить токен" || error === "Refresh token отсутствует") {
             dispatch(logout());
