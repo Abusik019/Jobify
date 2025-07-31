@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { refreshTokens, checkAuth, logout } from "../../redux/slices/authSlice";
 import { useLocation, useNavigate } from "react-router-dom";
+import { useOAuthHandler } from '../../hooks/useOAuthHandler';
 
 export const AuthProvider = ({ children }) => {
     const dispatch = useDispatch();
@@ -9,16 +10,11 @@ export const AuthProvider = ({ children }) => {
     const location = useLocation();
     const { accessToken, refreshToken, error } = useSelector((state) => state.auth);
 
+    useOAuthHandler();
+
     useEffect(() => {
-        // Проверяем, есть ли код OAuth в URL
         const params = new URLSearchParams(location.search);
         const hasOAuthCode = params.get('code');
-        
-        if (accessToken) {
-            dispatch(checkAuth());
-        } else if (!accessToken && !refreshToken && location.pathname !== "/login" && location.pathname !== "/registration" && !hasOAuthCode) {
-            navigate("/login");
-        }
         
         if (accessToken && location.pathname === "/login" && !hasOAuthCode) {
             navigate("/");
@@ -35,10 +31,9 @@ export const AuthProvider = ({ children }) => {
                     })
                     .catch(() => {
                         dispatch(logout());
-                        navigate("/login");
                     });
             }
-        }, 15 * 60 * 1000); // Каждые 15 минут
+        }, 15 * 60 * 1000); 
 
         return () => clearInterval(interval);
     }, [refreshToken, dispatch, navigate]);
@@ -46,7 +41,6 @@ export const AuthProvider = ({ children }) => {
     useEffect(() => {
         if (error === "Не удалось обновить токен" || error === "Refresh token отсутствует") {
             dispatch(logout());
-            navigate("/login");
         }
     }, [error, dispatch, navigate]);
 
