@@ -27,13 +27,9 @@ export const useOAuthHandler = () => {
 
         window.history.replaceState({}, '', location.pathname);
 
-        console.log('code:', code);
-
         axios
             .get(`https://jobify.api-coreinno.ru/api/auth/oauth/kc-callback?code=${code}`)
             .then(({ data }) => {
-                console.log('OAuth success:', data);
-
                 localStorage.setItem('accessToken', data.accessToken);
                 localStorage.setItem('refreshToken', data.refreshToken);
 
